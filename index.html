@@ -229,6 +229,23 @@ a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--
 .foot a{text-decoration:none}
 .foot a:hover{color:var(--c-ink)}
 
+/* free guide pop-up */
+.gp{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:16px;background:var(--c-shade-2)}
+.gp.on{display:flex}
+.gp-box{position:relative;display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:24px;align-items:center;max-width:640px;width:100%;background:var(--c-bg);border-radius:var(--r-md);padding:28px;box-shadow:0 20px 60px var(--c-shade-2)}
+.gp-cover{border-radius:var(--r-sm);box-shadow:0 8px 24px var(--c-rule-dark)}
+.gp h2{font-size:clamp(24px,3vw,32px);margin-bottom:12px}
+.gp p{font-weight:300;color:var(--c-muted);font-size:16px;margin-bottom:16px}
+.gp label{display:block;font-size:15px;font-weight:400;margin-bottom:8px;color:var(--c-ink)}
+.gp input{width:100%;min-height:52px;padding:0 16px;border:2px solid var(--c-line);border-radius:var(--r-pill);font-family:var(--f-body);font-size:17px;color:var(--c-ink);background:var(--c-bg);margin-bottom:12px}
+.gp input:focus-visible{outline:3px solid var(--c-cyan);outline-offset:2px;border-color:var(--c-cyan)}
+.gp .btn{width:100%}
+.gp-x{position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;border-radius:var(--r-pill);background:var(--c-ice);color:var(--c-ink);font-size:24px;line-height:1;cursor:pointer}
+.gp-x:hover{background:var(--c-line)}
+.gp-x:focus-visible{outline:3px solid var(--c-cyan);outline-offset:2px}
+.gp-small{font-size:13px!important;margin:12px 0 0!important}
+.gp-msg{font-weight:400!important;color:var(--c-ink)!important}
+@media (max-width:600px){.gp-box{grid-template-columns:minmax(0,1fr);padding:24px 20px;gap:16px}.gp-cover{display:none}}
 /* sticky mobile apply */
 .mbar{display:none}
 
@@ -475,6 +492,25 @@ a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--
   </div>
 </footer>
 
+<div class="gp" id="gp" role="dialog" aria-modal="true" aria-labelledby="gp-title" hidden>
+  <div class="gp-box">
+    <button class="gp-x" type="button" aria-label="Close">&times;</button>
+    <img class="gp-cover" src="img/guide-cover.jpg" width="510" height="660" alt="Cover of the free guide, Build Muscle With an Old Injury">
+    <div>
+      <h2 id="gp-title">Build muscle with an old injury.</h2>
+      <p>The 5 rules I used to rebuild after spinal fusion. Free 6-page guide, sent to your inbox.</p>
+      <form id="gp-form" action="https://app.kit.com/forms/10249736/subscriptions" method="post" target="gp-frame">
+        <label for="gp-email">Your email</label>
+        <input id="gp-email" type="email" name="email_address" autocomplete="email" required placeholder="you@email.com">
+        <button class="btn btn-primary" type="submit">Send me the guide</button>
+        <p class="gp-small">No spam. Unsubscribe anytime.</p>
+      </form>
+      <p class="gp-msg" id="gp-msg" hidden></p>
+      <iframe name="gp-frame" title="Sign-up" hidden tabindex="-1"></iframe>
+    </div>
+  </div>
+</div>
+
 <div class="mbar"><a class="btn btn-primary" href="https://forms.gle/NFUPkJZfpTfDT59e7">Apply for coaching</a></div>
 
 <script>
@@ -498,6 +534,32 @@ a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--
     document.getElementById('r-c').textContent=c+' g';
     document.getElementById('r-f').textContent=fat+' g';
     note.textContent='A starting point, not a prescription. Track for two weeks, then adjust. Want it built around your life and injuries?';
+  });
+})();
+(function(){
+  var g=document.getElementById('gp');if(!g)return;
+  var K='amgp',shown=false,last=null;
+  function get(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function set(v){try{localStorage.setItem(K,v)}catch(e){}}
+  var seen=get();if(seen==='done')return;
+  if(seen&&Date.now()-parseInt(seen,10)<7*864e5)return;
+  function open(){if(shown)return;shown=true;set(String(Date.now()));last=document.activeElement;g.hidden=false;g.classList.add('on');document.getElementById('gp-email').focus()}
+  function close(){g.classList.remove('on');g.hidden=true;if(last&&last.focus)last.focus()}
+  g.querySelector('.gp-x').addEventListener('click',close);
+  g.addEventListener('click',function(e){if(e.target===g)close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&g.classList.contains('on'))close()});
+  var ready=false;setTimeout(function(){ready=true},5000);
+  document.addEventListener('mouseout',function(e){if(ready&&!e.relatedTarget&&e.clientY<=0)open()});
+  var touch=window.matchMedia('(hover:none)').matches;
+  if(touch){
+    setTimeout(open,30000);
+    window.addEventListener('scroll',function(){var h=document.documentElement;if(ready&&h.scrollTop/(h.scrollHeight-h.clientHeight)>0.5)open()},{passive:true});
+  }
+  var f=document.getElementById('gp-form'),m=document.getElementById('gp-msg');
+  f.addEventListener('submit',function(){
+    var b=f.querySelector('button');b.disabled=true;b.textContent='Sending...';
+    setTimeout(function(){set('done');f.hidden=true;m.hidden=false;
+      m.textContent="You're in! Check your email and tap the button to download your guide. Not there? Check spam or Promotions.";},1200);
   });
 })();
 </script>
