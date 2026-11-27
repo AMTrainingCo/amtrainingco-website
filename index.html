@@ -555,11 +555,13 @@ a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--
   var K='amgp',shown=false,last=null;
   function get(){try{return localStorage.getItem(K)}catch(e){return null}}
   function set(v){try{localStorage.setItem(K,v)}catch(e){}}
-  var seen=get();if(seen==='done')return;
-  if(seen&&Date.now()-parseInt(seen,10)<7*864e5)return;
+  var forced=/[?&]guide=1/.test(location.search)||location.hash==='#guide';
+  var seen=get();if(!forced&&seen==='done')return;
+  if(!forced&&seen&&Date.now()-parseInt(seen,10)<7*864e5)return;
   function open(){if(shown)return;shown=true;set(String(Date.now()));last=document.activeElement;g.hidden=false;g.classList.add('on');document.getElementById('gp-email').focus()}
   function close(){g.classList.remove('on');g.hidden=true;if(last&&last.focus)last.focus()}
   g.querySelector('.gp-x').addEventListener('click',close);
+  if(forced){setTimeout(open,400);}
   g.addEventListener('click',function(e){if(e.target===g)close()});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&g.classList.contains('on'))close()});
   var ready=false;setTimeout(function(){ready=true},5000);
