@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AM Training Co. | Online body recomposition coaching with Aaron Munoz</title>
+<meta name="description" content="Online body recomposition coaching from Aaron Munoz, NASM certified trainer and corrective exercise specialist. Build muscle and lose body fat, even with old injuries. No contracts.">
+<meta property="og:title" content="AM Training Co. | Body recomposition coaching">
+<meta property="og:description" content="Build muscle and lose body fat, even with old injuries. Online coaching with Aaron Munoz.">
+<meta property="og:image" content="img/hero.jpg">
+<style>
+/* Hallmark v2.0.0 · direction: custom (client brand sheet, Nov 2026; layout cues from the Bucked Up homepage the client likes) · genre: editorial · shape: banner hero, promise strip, who-I-help tiles, results band, steps, start-here tiles, calculator, coach, FAQ, apply band · hero: banner, head left, photo right · nav: black top bar, wordmark, four anchors, one action · footer: single row, logo, place, two links · posture: restrained · surface: absolute · signature: client recomp numbers set huge, scale up and fat down at once · job: apply */
+/* critique: white page, navy type, one pink action colour, cyan for numbers; Bucked Up simplicity: bold uppercase heads, image tiles with black label bars, two start-here tiles */
+/* Hallmark · waive 7b · pure white base · the client's brand sheet makes Pure White FFFFFF the primary colour at 65 percent */
+/* Hallmark · waive 1 · Poppins on every head · the client's brand sheet fixes Poppins Bold for headlines and Light for support text */
+/* Hallmark · waive 38iii · one pink line in the hero head · brand pink marks the promise once, only in the hero */
+:root{
+  --c-bg:#FFFFFF;
+  --c-ink:#172B3A;
+  --c-black:#0E1A24;
+  --c-muted:#667085;
+  --c-pink:#E840B0;
+  --c-pink-deep:#C42C93;
+  --c-cyan:#18B0D0;
+  --c-ice:#EAF8FC;
+  --c-blush:#FCEAF5;
+  --c-line:#E4E9EE;
+  --c-ink-soft:#C9D3DC;
+  --c-rule-dark:rgba(201,211,220,.25);
+  --c-shade:rgba(14,26,36,.0);
+  --c-shade-2:rgba(14,26,36,.82);
+  --f-head:"Poppins",system-ui,sans-serif;
+  --f-body:"Poppins",system-ui,sans-serif;
+  --r-sm:10px; --r-md:20px; --r-pill:999px;
+  --wrap:1200px;
+  --gap:clamp(20px,3vw,40px);
+}
+@font-face{font-family:"Poppins";src:url(fonts/Poppins-Light.ttf) format("truetype");font-weight:300;font-display:swap}
+@font-face{font-family:"Poppins";src:url(fonts/Poppins-Regular.ttf) format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Poppins";src:url(fonts/Poppins-Bold.ttf) format("truetype");font-weight:700;font-display:swap}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--c-bg);color:var(--c-ink);font-family:var(--f-body);font-size:17px;line-height:1.6}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{text-wrap:balance;font-family:var(--f-head);font-weight:700;color:var(--c-ink);line-height:1.04;margin:0;overflow-wrap:break-word;min-width:0}
+h1,h2{text-transform:uppercase}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+.section{padding:clamp(64px,9vw,112px) 0}
+section[id]{scroll-margin-top:80px}
+.h2{font-size:clamp(32px,4.4vw,56px)}
+.lead{font-weight:300;font-size:clamp(18px,1.6vw,21px);color:var(--c-muted);max-width:40ch}
+.center{text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:var(--r-pill);font-family:var(--f-body);font-weight:700;font-size:19px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background-color .18s ease,color .18s ease,transform .18s ease,border-color .18s ease}
+.btn-primary{background:var(--c-pink);color:var(--c-bg)}
+.btn-primary:hover{background:var(--c-pink-deep)}
+.btn-primary:active{transform:translateY(1px)}
+.btn-line{background:transparent;color:var(--c-ink);border-color:var(--c-ink)}
+.btn-line:hover{background:var(--c-ink);color:var(--c-bg)}
+a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--c-cyan);outline-offset:3px;transition:none}
+
+/* top bar + nav */
+.topbar{background:var(--c-black);color:var(--c-bg);font-size:15px;text-align:center;padding:8px 16px}
+.topbar a{color:var(--c-bg);font-weight:700}
+.nav{position:sticky;top:0;z-index:10;background:var(--c-bg);border-bottom:1px solid var(--c-line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand img{height:44px;width:auto}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a:not(.btn){text-decoration:none;font-size:15px;font-weight:700;color:var(--c-ink)}
+.nav-links a:not(.btn):hover{color:var(--c-pink)}
+.nav .btn{min-height:44px;padding:0 24px}
+
+/* hero banner */
+.hero{padding:clamp(16px,2vw,24px) 0 0}
+.banner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:stretch;background:var(--c-ice);border-radius:var(--r-md);overflow:hidden}
+.banner-text{padding:clamp(32px,5vw,72px) clamp(24px,4vw,64px);align-self:center}
+.hero h1{font-size:clamp(44px,6vw,88px);letter-spacing:-.01em;line-height:.98}
+.hero h1 span{color:var(--c-pink);display:block}
+.hero .lead{margin-top:24px;color:var(--c-ink)}
+.actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px}
+.banner-photo{min-height:100%;position:relative}
+.banner-photo img{width:100%;height:100%;min-height:560px;object-fit:cover;object-position:50% 25%}
+
+/* promise strip */
+.promises{list-style:none;margin:0;padding:24px 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;border-bottom:1px solid var(--c-line)}
+.promises li{display:flex;flex-direction:column;gap:2px;padding:0 8px}
+.promises b{font-size:17px}
+.promises span{font-size:15px;color:var(--c-muted)}
+
+/* who I help tiles */
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
+.tile{position:relative;display:block;border-radius:var(--r-md);overflow:hidden;text-decoration:none;color:var(--c-bg);background:var(--c-black)}
+.tile img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.tile{transition:transform .2s ease}
+.tile:hover{transform:translateY(-4px)}
+.tile .bar{position:absolute;left:0;right:0;bottom:0;background:var(--c-black);padding:16px 20px}
+.tile h3{color:var(--c-bg);font-size:21px}
+.tile p{font-size:15px;color:var(--c-ink-soft);margin-top:4px}
+
+/* results band */
+.results{background:var(--c-black);color:var(--c-bg)}
+.results h2{color:var(--c-bg)}
+.results .lead{color:var(--c-ink-soft);margin-top:16px}
+.big{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px}
+.big div{border-top:2px solid var(--c-pink);padding-top:16px}
+.big b{display:block;font-size:clamp(48px,6vw,84px);line-height:1;color:var(--c-cyan);font-variant-numeric:tabular-nums}
+.big div:first-child b{color:var(--c-pink)}
+.big span{display:block;margin-top:12px;font-size:16px;color:var(--c-ink-soft);max-width:26ch}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:48px}
+.card{background:var(--c-bg);color:var(--c-ink);border-radius:var(--r-md);padding:28px}
+.card .who{font-size:15px;color:var(--c-muted)}
+.card .bf{font-weight:700;font-size:clamp(32px,3.4vw,44px);line-height:1.1;margin-top:12px;font-variant-numeric:tabular-nums}
+.card .bf span{font-weight:300;font-size:.5em;color:var(--c-muted)}
+.card .sub{font-size:15px;color:var(--c-muted)}
+.card ul{list-style:none;margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--c-line);display:flex;gap:24px}
+.card li{font-size:16px;color:var(--c-muted)}
+.card li b{color:var(--c-cyan);font-size:20px}
+.card li b.up{color:var(--c-pink)}
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--gap);align-items:center;margin-top:48px}
+.scan-head{color:var(--c-bg);font-size:clamp(26px,3vw,36px);margin-top:96px}
+.feature img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--r-md)}
+.feature-flip img{order:2}
+.feature-num{font-variant-numeric:tabular-nums;font-weight:700;font-size:clamp(48px,6vw,84px);line-height:1;color:var(--c-pink)}
+.feature-flip .feature-num{color:var(--c-cyan)}
+.feature-sub{margin-top:12px;font-size:18px;color:var(--c-ink-soft)}
+.feature blockquote{margin:28px 0 0;padding:0}
+.feature blockquote p{font-size:clamp(19px,1.8vw,24px);font-weight:300;line-height:1.5;color:var(--c-bg);max-width:46ch}
+.clients{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:56px;align-items:stretch}
+.clients img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--r-md)}
+.quote{margin:0;background:var(--c-bg);color:var(--c-ink);border-radius:var(--r-md);padding:32px;display:flex;flex-direction:column;justify-content:space-between}
+.quote p{font-size:clamp(20px,1.9vw,26px);font-weight:700;line-height:1.3}
+.quote cite{display:block;margin-top:20px;font-style:normal;color:var(--c-muted);font-size:15px}
+.table-link{display:inline-block;margin-top:32px;color:var(--c-ink-soft);font-size:15px}
+.proof{width:100%;border-collapse:collapse;margin-top:24px;font-size:16px;color:var(--c-bg)}
+.proof th{text-align:left;font-weight:400;font-size:15px;color:var(--c-ink-soft);padding:0 12px 12px;border-bottom:1px solid var(--c-ink-soft)}
+.proof td{padding:16px 12px;border-bottom:1px solid var(--c-rule-dark);white-space:nowrap;font-variant-numeric:tabular-nums}
+.proof td b{color:var(--c-cyan)}
+.proof td .up{color:var(--c-pink)}
+
+/* steps */
+.steps{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.steps li{border-top:4px solid var(--c-cyan);padding-top:20px}
+.steps .n{font-weight:700;font-size:15px;color:var(--c-cyan)}
+.steps h3{font-size:22px;margin-top:8px}
+.steps p{margin-top:8px;font-size:16px;color:var(--c-muted)}
+
+/* start here tiles */
+.start{background:var(--c-ice)}
+.starts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:40px}
+.start-tile{position:relative;border-radius:var(--r-md);overflow:hidden;min-height:360px;display:flex;align-items:flex-end;text-decoration:none;background:var(--c-black)}
+.start-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.start-tile{transition:transform .2s ease}
+.start-tile:hover{transform:translateY(-4px)}
+.start-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--c-shade-2) 0%,var(--c-shade) 70%)}
+.start-tile .in{position:relative;z-index:1;padding:28px;width:100%;text-align:center}
+.start-tile h3{color:var(--c-bg);font-size:clamp(24px,2.6vw,32px);text-transform:uppercase}
+.start-tile .btn{margin-top:16px}
+
+/* calculator */
+.calc .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--gap);align-items:start}
+.calc .lead{margin-top:20px}
+.calc form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:32px}
+.field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label{font-size:15px;color:var(--c-muted)}
+.field input,.field select{font-family:var(--f-body);font-size:17px;color:var(--c-ink);background:var(--c-bg);border:2px solid var(--c-line);border-radius:var(--r-sm);min-height:52px;padding:0 16px;width:100%;transition:border-color .15s ease}
+.field input:hover,.field select:hover{border-color:var(--c-muted)}
+.field input:focus-visible,.field select:focus-visible{outline:3px solid var(--c-cyan);outline-offset:2px;border-color:var(--c-ink);transition:none}
+.field input:disabled,.field select:disabled{opacity:.5;cursor:not-allowed}
+.hw{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.calc button.btn{grid-column:1/-1;justify-self:start}
+.result{background:var(--c-ice);border-radius:var(--r-md);padding:32px clamp(24px,3vw,40px)}
+.result .kcal{font-weight:700;font-size:clamp(44px,5vw,64px);line-height:1;font-variant-numeric:tabular-nums}
+.result .kcal small{font-size:18px;font-weight:400;color:var(--c-muted);margin-left:8px}
+.macros{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.macros li{background:var(--c-bg);border-radius:var(--r-sm);padding:16px}
+.macros b{display:block;font-size:28px;color:var(--c-cyan);font-variant-numeric:tabular-nums}
+.macros li:first-child b{color:var(--c-pink)}
+.macros span{font-size:15px;color:var(--c-muted)}
+.result p{margin-top:20px;font-size:15px;color:var(--c-muted)}
+.result .btn{margin-top:24px}
+
+/* coach */
+.coach .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:var(--gap);align-items:center}
+.coach-photo img{width:100%;aspect-ratio:6/7;object-fit:cover;border-radius:var(--r-md)}
+.coach .lead{margin-top:20px}
+.creds{list-style:none;margin:28px 0 0;padding:0}
+.creds li{padding:16px 0;border-top:1px solid var(--c-line)}
+.creds li:last-child{border-bottom:1px solid var(--c-line)}
+
+/* fuel */
+.fuel{background:var(--c-blush)}
+.fuel .wrap>div{max-width:720px}
+.fuel .lead{margin-top:20px;color:var(--c-ink)}
+.code-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin:32px 0 24px}
+.code{font-weight:700;font-size:clamp(28px,3.4vw,40px);letter-spacing:.02em;color:var(--c-pink);background:var(--c-bg);border:2px dashed var(--c-pink);border-radius:var(--r-sm);padding:8px 20px}
+.disclose{margin-top:20px;font-size:15px;color:var(--c-muted)}
+
+/* faq */
+.faq .wrap{max-width:860px}
+.faq details{border-bottom:1px solid var(--c-line)}
+.faq details:first-of-type{border-top:1px solid var(--c-line);margin-top:32px}
+.faq summary{cursor:pointer;list-style:none;padding:24px 40px 24px 0;font-weight:700;font-size:19px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:16px;font-size:28px;color:var(--c-pink);transition:transform .2s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--c-pink)}
+.faq summary:focus-visible{outline:3px solid var(--c-cyan);outline-offset:2px}
+.faq details p{padding:0 0 24px;color:var(--c-muted);max-width:62ch}
+
+/* apply band */
+.apply{background:var(--c-pink);color:var(--c-bg)}
+.apply .wrap{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);gap:var(--gap);align-items:center}
+.apply h2{color:var(--c-bg);font-size:clamp(40px,5.4vw,72px)}
+.apply p{margin-top:12px;font-size:21px;font-weight:700}
+.apply .btn{background:var(--c-black);color:var(--c-bg);justify-self:start}
+.apply .btn:hover{background:var(--c-ink)}
+
+/* footer */
+.foot{padding:40px 0 104px;font-size:15px;color:var(--c-muted)}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:16px 48px;align-items:center;justify-content:space-between}
+.foot img{height:48px;width:auto}
+.foot nav{display:flex;gap:24px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--c-ink)}
+
+/* sticky mobile apply */
+.mbar{display:none}
+
+@media (max-width:960px){
+  .banner,.calc .wrap,.coach .wrap,.apply .wrap{grid-template-columns:minmax(0,1fr)}
+  .banner-photo{order:-1}
+  .banner-photo img{min-height:0;aspect-ratio:4/3}
+  .promises{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .feature{grid-template-columns:minmax(0,1fr)}
+  .feature-flip img{order:0}
+  .nav-links a:not(.btn){display:none}
+}
+@media (max-width:640px){
+  .tiles,.starts,.steps,.big,.cards,.calc form{grid-template-columns:minmax(0,1fr)}
+  .tiles{grid-auto-flow:column;grid-auto-columns:78%;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+  .tile{scroll-snap-align:start}
+  .proof th:nth-child(2),.proof td:nth-child(2){display:none}
+  .proof td{padding:16px 8px}
+  .start-tile{min-height:280px}
+  .mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:var(--c-bg);border-top:1px solid var(--c-line)}
+  .mbar .btn{width:100%}
+  .mbar{transform:translateY(110%);transition:transform .25s ease}
+  .mbar.on{transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn,.tile,.start-tile,.faq summary::after,.mbar{transition:none}
+  .tile:hover,.start-tile:hover{transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">Now taking new online clients. <a href="https://forms.gle/NFUPkJZfpTfDT59e7">Apply here</a></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/logo.jpg" alt="AM Training Co." width="61" height="44"></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#results">Results</a>
+      <a href="#how">How it works</a>
+      <a href="#calculator">Macro calculator</a>
+      <a href="#fuel">Supplements</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary" href="https://forms.gle/NFUPkJZfpTfDT59e7">Apply</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="banner">
+        <div class="banner-text">
+          <h1>Build muscle. <span>Lose fat.</span> Same time.</h1>
+          <p class="lead">Online coaching for busy adults, old injuries and all.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://forms.gle/NFUPkJZfpTfDT59e7">Apply for coaching</a>
+            <a class="btn btn-line" href="#calculator">Get my macros</a>
+          </div>
+        </div>
+        <div class="banner-photo"><img src="img/hero.jpg" alt="Aaron Munoz in a white tank top and backwards cap in the gym" width="1031" height="1288"></div>
+      </div>
+      <ul class="promises">
+        <li><b>No contracts</b><span>Stay because it works</span></li>
+        <li><b>Weekly check-ins</b><span>I see every week</span></li>
+        <li><b>Monthly reviews</b><span>All your data, plus a plan</span></li>
+        <li><b>NASM certified</b><span>Trainer, CES and nutrition coach</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="h2">Who I help</h2>
+      <div class="tiles">
+        <a class="tile" href="https://forms.gle/NFUPkJZfpTfDT59e7"><img src="img/rdl.jpg" alt="Aaron pulling a 315 lb Romanian deadlift" loading="lazy" width="1000" height="1166"><div class="bar"><h3>Busy adults</h3><p>Training that fits your schedule</p></div></a>
+        <a class="tile" href="https://forms.gle/NFUPkJZfpTfDT59e7"><img src="img/story-today.jpg" alt="Aaron's back today, surgery scar visible" loading="lazy" width="700" height="1373"><div class="bar"><h3>Old injuries</h3><p>Built around what hurts</p></div></a>
+        <a class="tile" href="https://forms.gle/NFUPkJZfpTfDT59e7"><img src="img/lat.jpg" alt="Aaron flexing in a white tank top" loading="lazy" width="1000" height="1250"><div class="bar"><h3>Stuck on the scale</h3><p>Change your body, not just your weight</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section results" id="results">
+    <div class="wrap">
+      <h2 class="h2">Real clients. Real results.</h2>
+      <div class="feature">
+        <img src="img/client-1.jpg" alt="Amanda before and after: about 300 lb at the start, 102.8 lb lighter a year later" loading="lazy" width="1000" height="1000">
+        <div class="feature-text">
+          <p class="feature-num">102.8 lb down</p>
+          <p class="feature-sub">Amanda, in one year</p>
+          <blockquote><p>“Working with my personal trainer Aaron has been a game changer. He’s helped me with form, technique, training plans, accountability, and motivation. And he’s celebrated every single win with me, big or small.”</p></blockquote>
+        </div>
+      </div>
+      <div class="feature feature-flip">
+        <img src="img/client-2.jpg" alt="Tom before and after: leaner and more muscular" loading="lazy" width="1000" height="1000">
+        <div class="feature-text">
+          <p class="feature-num">30 lb down</p>
+          <p class="feature-sub">Tom, client for 1 year</p>
+          <blockquote><p>“I’m down 30 pounds and increased muscle mass, strength and confidence. Highly recommend.”</p></blockquote>
+        </div>
+      </div>
+      <h3 class="scan-head">InBody scan results</h3>
+      <div class="big">
+        <div><b>105 lb</b><span>of body fat lost by 6 clients</span></div>
+        <div><b>4 of 6</b><span>added muscle while losing fat</span></div>
+        <div><b>18.1%</b><span>body fat for one client, down from 28.7%</span></div>
+      </div>
+      <div class="cards">
+        <article class="card"><p class="who">Man, 40s, 18 months</p><p class="bf">28.7% <span>to</span> 18.1%</p><p class="sub">body fat</p><ul><li><b>−25 lb</b> fat</li><li><b class="up">+5.1 lb</b> muscle</li></ul></article>
+        <article class="card"><p class="who">Woman, 30s, 16 months</p><p class="bf">45.2% <span>to</span> 36.7%</p><p class="sub">body fat</p><ul><li><b>−21.7 lb</b> fat</li><li><b class="up">+2.6 lb</b> muscle</li></ul></article>
+        <article class="card"><p class="who">Man, 20s, 4 months</p><p class="bf">27.5% <span>to</span> 24.5%</p><p class="sub">body fat</p><ul><li><b>−7.6 lb</b> fat</li><li><b class="up">+2.9 lb</b> muscle</li></ul></article>
+      </div>
+      <table class="proof" aria-label="InBody results from six clients">
+        <thead><tr><th scope="col">Client</th><th scope="col">Time</th><th scope="col">Body fat</th><th scope="col">Fat</th><th scope="col">Muscle</th></tr></thead>
+        <tbody>
+          <tr><td>Man, 40s</td><td>18 months</td><td><b>28.7% to 18.1%</b></td><td><b>−25.0 lb</b></td><td><b class="up">+5.1 lb</b></td></tr>
+          <tr><td>Woman, 30s</td><td>16 months</td><td><b>45.2% to 36.7%</b></td><td><b>−21.7 lb</b></td><td><b class="up">+2.6 lb</b></td></tr>
+          <tr><td>Woman, 20s</td><td>9 months</td><td><b>37.4% to 30.3%</b></td><td><b>−24.1 lb</b></td><td>−5.5 lb</td></tr>
+          <tr><td>Woman, 40s</td><td>7 months</td><td><b>39.6% to 34.1%</b></td><td><b>−23.7 lb</b></td><td>−3.1 lb</td></tr>
+          <tr><td>Man, 30s</td><td>6 months</td><td><b>16.4% to 14.6%</b></td><td><b>−2.9 lb</b></td><td><b class="up">+2.0 lb</b></td></tr>
+          <tr><td>Man, 20s</td><td>4 months</td><td><b>27.5% to 24.5%</b></td><td><b>−7.6 lb</b></td><td><b class="up">+2.9 lb</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <div class="wrap">
+      <h2 class="h2">Coaching in four steps</h2>
+      <ol class="steps">
+        <li><span class="n">Step 1</span><h3>You apply</h3><p>A short form about your goals, schedule and old injuries.</p></li>
+        <li><span class="n">Step 2</span><h3>I build your plan</h3><p>Training and macros built around your life and your body.</p></li>
+        <li><span class="n">Step 3</span><h3>We check in</h3><p>Every week a check-in. Every month a full review and next month’s plan.</p></li>
+        <li><span class="n">Step 4</span><h3>You learn the why</h3><p>So you can keep the results for life.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section start">
+    <div class="wrap center">
+      <h2 class="h2">Don’t know where to start?</h2>
+      <div class="starts">
+        <a class="start-tile" href="#calculator"><img src="img/lat.jpg" alt="" loading="lazy" width="1000" height="1250"><div class="in"><h3>Get your free macros</h3><span class="btn btn-primary">Start now</span></div></a>
+        <a class="start-tile" href="https://forms.gle/NFUPkJZfpTfDT59e7"><img src="img/hero.jpg" alt="" loading="lazy" width="1031" height="1288"><div class="in"><h3>Apply for coaching</h3><span class="btn btn-primary">Start now</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section calc" id="calculator">
+    <div class="wrap">
+      <div>
+        <h2 class="h2">Free macro calculator</h2>
+        <p class="lead">Your starting calories, protein, carbs and fat.</p>
+        <form id="macro-form" novalidate>
+          <div class="field"><label for="sex">Sex</label><select id="sex"><option value="m">Male</option><option value="f">Female</option></select></div>
+          <div class="field"><label for="age">Age</label><input id="age" type="number" inputmode="numeric" min="16" max="90" placeholder="35"></div>
+          <div class="field"><label for="weight">Weight (lb)</label><input id="weight" type="number" inputmode="decimal" min="80" max="500" placeholder="185"></div>
+          <div class="field"><label for="ft">Height</label><div class="hw"><input id="ft" type="number" inputmode="numeric" min="4" max="7" placeholder="5 ft" aria-label="Height, feet"><input id="in" type="number" inputmode="numeric" min="0" max="11" placeholder="10 in" aria-label="Height, inches"></div></div>
+          <div class="field full"><label for="activity">Activity</label><select id="activity"><option value="1.375">Lift 2 to 3 days a week</option><option value="1.55" selected>Lift 4 to 5 days a week</option><option value="1.725">Lift 6 days a week or active job</option></select></div>
+          <div class="field full"><label for="goal">Goal</label><select id="goal"><option value="cut">Lose fat</option><option value="recomp" selected>Build muscle and lose fat (recomp)</option><option value="build">Build muscle</option></select></div>
+          <button class="btn btn-primary" type="submit">Calculate my macros</button>
+        </form>
+      </div>
+      <div class="result" aria-live="polite">
+        <div class="kcal"><span id="r-kcal">0</span><small>calories a day</small></div>
+        <ul class="macros">
+          <li><b id="r-p">0 g</b><span>Protein</span></li>
+          <li><b id="r-c">0 g</b><span>Carbs</span></li>
+          <li><b id="r-f">0 g</b><span>Fat</span></li>
+        </ul>
+        <p id="r-note">Fill in your numbers and tap calculate.</p>
+        <a class="btn btn-primary" href="https://forms.gle/NFUPkJZfpTfDT59e7">Get a plan built for you</a>
+        <noscript><p>The calculator needs JavaScript turned on.</p></noscript>
+      </div>
+    </div>
+  </section>
+
+  <section class="section coach">
+    <div class="wrap">
+      <div class="coach-photo"><img src="img/story-rods.jpg" alt="X-ray showing metal rods along Aaron's spine" loading="lazy" width="700" height="1197"></div>
+      <div>
+        <h2 class="h2">Rods in my spine. Built this anyway.</h2>
+        <p class="lead">Doctors said heavy lifting was over for me. I got up anyway. Now I coach people to do the same.</p>
+        <ul class="creds">
+          <li><b>NASM certified</b> trainer, corrective exercise specialist and nutrition coach</li>
+          <li><b>Personal Trainer of the Month 5 times</b> in my year at Crunch Fitness</li>
+          <li><b>2 clients won</b> the gym’s transformation challenge, taking home $1,250 and $250</li>
+          <li><b>Bucked Up</b> ambassador</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fuel" id="fuel">
+    <div class="wrap">
+      <div>
+        <h2 class="h2">The fuel I use</h2>
+        <p class="lead">I’m a Bucked Up ambassador. It’s what I take before I train. Use my code to save on anything in their store.</p>
+        <div class="code-row">
+          <span class="code" id="code">AMTRAINING10</span>
+          <button class="btn btn-line" type="button" id="copy-code">Copy code</button>
+        </div>
+        <a class="btn btn-primary" href="https://bckd.co/5CGAgXw" target="_blank" rel="sponsored noopener">Shop Bucked Up</a>
+        <p class="disclose">I earn a commission when you buy through my link, at no extra cost to you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="wrap">
+      <h2 class="h2">Questions</h2>
+      <details><summary>Is there a contract?</summary><p>No. You stay because it’s working.</p></details>
+      <details><summary>I have an old injury. Can I still do this?</summary><p>Yes. I’m a NASM corrective exercise specialist with rods in my own spine. Your plan is built around what you can do today.</p></details>
+      <details><summary>Can I really build muscle and lose fat at the same time?</summary><p>Yes, that’s body recomposition. One client went from 28.7% to 18.1% body fat, losing 25 lb of fat and adding 5.1 lb of muscle.</p></details>
+      <details><summary>How do check-ins work?</summary><p>You send a short check-in every week. At the end of each month I review all your data and send your plan for next month.</p></details>
+      <details><summary>Do you coach in person or online?</summary><p>Online, so you can train from anywhere. I’m based in Yukon, Oklahoma.</p></details>
+      <details><summary>How do I start?</summary><p>Fill out the application. It asks about your goals, your schedule and any old injuries.</p></details>
+    </div>
+  </section>
+
+  <section class="section apply">
+    <div class="wrap">
+      <div>
+        <h2>You can build muscle with me.</h2>
+        <p>No contracts. Old injuries welcome.</p>
+      </div>
+      <a class="btn" href="https://forms.gle/NFUPkJZfpTfDT59e7">Apply for coaching</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img src="img/logo.jpg" alt="AM Training Co." width="67" height="48">
+    <p>Online coaching from Yukon, Oklahoma</p>
+    <nav aria-label="Footer">
+      <a href="https://www.instagram.com/aaron_munoz1/">Instagram</a>
+      <a href="https://forms.gle/NFUPkJZfpTfDT59e7">Apply</a>
+      <a href="https://bckd.co/5CGAgXw" target="_blank" rel="sponsored noopener">Shop Bucked Up</a>
+    </nav>
+    <p>© 2026 AM Training Co.</p>
+  </div>
+</footer>
+
+<div class="mbar"><a class="btn btn-primary" href="https://forms.gle/NFUPkJZfpTfDT59e7">Apply for coaching</a></div>
+
+<script>
+(function(){var b=document.getElementById('copy-code');if(!b)return;b.addEventListener('click',function(){var t='AMTRAINING10';var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy code'},2000)};if(navigator.clipboard){navigator.clipboard.writeText(t).then(done,function(){})}else{done()}})})();
+(function(){var m=document.querySelector('.mbar');if(!m)return;function t(){m.classList.toggle('on',window.scrollY>700)}window.addEventListener('scroll',t,{passive:true});t()})();
+(function(){
+  var f=document.getElementById('macro-form');if(!f)return;
+  function v(id){return parseFloat(document.getElementById(id).value)}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var age=v('age'),lb=v('weight'),ft=v('ft'),inch=v('in')||0,note=document.getElementById('r-note');
+    if(!(age>=16&&age<=90)||!(lb>=80&&lb<=500)||!(ft>=4&&ft<=7)){note.textContent='Check your age, weight and height, then try again.';return}
+    var kg=lb*0.4536,cm=(ft*12+inch)*2.54,male=document.getElementById('sex').value==='m';
+    var bmr=10*kg+6.25*cm-5*age+(male?5:-161);
+    var tdee=bmr*parseFloat(document.getElementById('activity').value);
+    var goal=document.getElementById('goal').value;
+    var kcal=Math.round((goal==='cut'?tdee*0.8:goal==='build'?tdee*1.1:tdee*0.95)/10)*10;
+    var p=Math.round(lb*(goal==='build'?0.9:1)),fat=Math.round(kcal*0.25/9),c=Math.max(0,Math.round((kcal-p*4-fat*9)/4));
+    document.getElementById('r-kcal').textContent=kcal.toLocaleString();
+    document.getElementById('r-p').textContent=p+' g';
+    document.getElementById('r-c').textContent=c+' g';
+    document.getElementById('r-f').textContent=fat+' g';
+    note.textContent='A starting point, not a prescription. Track for two weeks, then adjust. Want it built around your life and injuries?';
+  });
+})();
+</script>
+</body>
+</html>
