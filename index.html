@@ -572,8 +572,15 @@ a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--
   document.addEventListener('mouseout',function(e){if(ready&&!e.relatedTarget&&e.clientY<=0)open()});
   var touch=window.matchMedia('(hover:none)').matches;
   if(touch){
-    setTimeout(open,30000);
-    window.addEventListener('scroll',function(){var h=document.documentElement;if(ready&&h.scrollTop/(h.scrollHeight-h.clientHeight)>0.5)open()},{passive:true});
+    var t0=Date.now(),maxY=0,lastY=0,lastT=0,upFrom=null,upT=0;
+    window.addEventListener('scroll',function(){
+      var h=document.documentElement,y=h.scrollTop,now=Date.now(),max=h.scrollHeight-h.clientHeight;
+      if(y>maxY)maxY=y;
+      if(y<lastY){ if(upFrom===null||now-lastT>250){upFrom=lastY;upT=now;} }
+      else upFrom=null;
+      lastY=y;lastT=now;
+      if(upFrom!==null&&now-t0>20000&&max>0&&maxY/max>=0.4&&upFrom-y>600&&now-upT<1200)open();
+    },{passive:true});
   }
   var f=document.getElementById('gp-form'),m=document.getElementById('gp-msg');
   f.addEventListener('submit',function(){
